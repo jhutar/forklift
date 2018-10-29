@@ -36,7 +36,6 @@
 
 - name: Run tests
   command: "{{ robottelo_virtualenv_path }}/bin/py.test --junit-xml={{ robottelo_junit_file }}
-             -m '{{ robottelo_test_options[robottelo_test_type] | default(robottelo_test_options.default) }}'
-             {{ robottelo_test_path[robottelo_test_type] | default(robottelo_test_path.default) }}"
+            {{ robottelo_pytest_options }}"
   args:
     chdir: "{{ robottelo_directory }}"

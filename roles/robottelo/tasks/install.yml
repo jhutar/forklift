@@ -7,6 +7,8 @@
     - gcc
     - git
     - libffi-devel
+    - libcurl-devel
+    - libxml2-devel
     - openssl-devel
     - rh-python36-python-devel
     - rh-python36-python-virtualenv
@@ -25,3 +27,5 @@
     virtualenv: "{{ robottelo_virtualenv_path }}"
     virtualenv_command: /opt/rh/rh-python36/root/bin/virtualenv
     chdir: "{{ robottelo_directory }}"
+  environment:
+    PYCURL_SSL_LIBRARY: openssl
